@@ -76,7 +76,8 @@ function operate (Equation) {
         addIndex = Equation.indexOf('+')
         if (Equation.indexOf('-') === 0) subIndex = Equation.indexOf('-',1)
         else subIndex = Equation.indexOf('-')
-        if (subIndex < 0 || (addIndex < subIndex && addIndex >= 0)){
+        console.log(subIndex)
+        if ((subIndex < 0 && addIndex > 0) || (addIndex < subIndex && addIndex >= 0)){
             index = Equation.indexOf('+')
             Calc = ['+']
             for (let i = index + 1; i < Equation.length; i++) {
@@ -86,7 +87,7 @@ function operate (Equation) {
                 else break
             }
             for (let i = index - 1; i >= 0; i--) {
-                if (nums.includes(Number(Equation[i]))|| Equation[i] === '.') {
+                if (nums.includes(Number(Equation[i]))|| Equation[i] === '.'|| (Equation[i] === '-' && i === 0)) {
                     Calc.unshift(Equation[i])
                 }
                 else break
@@ -95,11 +96,13 @@ function operate (Equation) {
             console.log(Calc)
             console.log(newEquation)
             return operate(newEquation)
-        }
+            }
         else if (addIndex < 0 || (subIndex < addIndex && subIndex >= 0)){
             index = Equation.indexOf('-')
+            console.log('- loop')
             neg = false
             if (index === 0) {
+                console.log('result is negative number')
                 neg = true
                 index = Equation.indexOf('-',1)
                 if (index < 0) return Number(Equation.join(''))
