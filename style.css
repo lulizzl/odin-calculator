@@ -1,0 +1,50 @@
+button {
+    display: inline-flex;
+    width: 25%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    aspect-ratio: 1/1;
+    font-size: x-large;
+    font-family: Helvetica, sans-serif;
+    border-radius: 12px;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 350px;
+    flex-shrink: 0,0,1;
+    border-style: double;
+    background-color: black;
+    margin: 50px
+}
+
+[id="display"] {
+    background-color: rgb(213, 227, 241);
+    border-style: solid;
+    border-width: 1px;
+    font-size: x-large;
+    height: 50px;
+    letter-spacing: 2px;
+    padding: 0;
+    text-align: center;
+    line-height: 50px
+}
+
+.num {
+    background-color: white;
+}
+
+.op {
+    background-color: rgb(168, 235, 235);
+}
+
+[id="="] {
+    background-color: rgb(255, 240, 155);
+}
+
+[id="clear"] {
+    background-color: rgb(255, 205, 205);
+
+}
